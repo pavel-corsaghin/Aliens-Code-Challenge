@@ -6,4 +6,5 @@ data class News(
     var content: String?,
     var author: String?,
     var imageUrl: String?,
+    var url: String
 )

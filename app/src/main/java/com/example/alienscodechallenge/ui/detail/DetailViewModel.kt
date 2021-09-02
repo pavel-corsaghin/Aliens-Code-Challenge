@@ -16,6 +16,9 @@ class DetailViewModel @Inject constructor(
     private val repository: NewsRepository
 ) : ViewModel() {
 
+    private val _showSmartMode = MutableLiveData(true)
+    val showSmartMode: LiveData<Boolean> = _showSmartMode
+
     private val _news = MutableLiveData<News>()
     val news: LiveData<News> = _news
 
@@ -24,5 +27,9 @@ class DetailViewModel @Inject constructor(
             val news = repository.getNewsDetail(newsId)
             _news.postValue(news)
         }
+    }
+
+    fun toggleMode()  {
+        _showSmartMode.value = !_showSmartMode.value!!
     }
 }
