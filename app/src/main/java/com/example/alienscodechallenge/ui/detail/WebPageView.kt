@@ -26,10 +26,7 @@ fun WebPageView(urlToRender: String) {
 @SuppressLint("SetJavaScriptEnabled")
 @Composable
 fun WebPageView(urlToRender: String, isLoading: Boolean, setLoading: (Boolean) -> Unit) {
-
-    if (isLoading) {
-        CircularProgressIndicator()
-    }
+    
     AndroidView(factory = {
         WebView(it).apply {
             layoutParams = ViewGroup.LayoutParams(
